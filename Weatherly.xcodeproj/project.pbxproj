@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		7542E71A5E9A9183AE160CFE /* Pods_Weatherly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EA176899B2B0ADCB322E90C /* Pods_Weatherly.framework */; };
 		AD0CE344DDC7D59AE1B26749 /* Pods_WeatherlyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1310B5301D175A8E3385FA7A /* Pods_WeatherlyTests.framework */; };
+		CA32C2D6263ED1BA00151719 /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA32C2D5263ED1BA00151719 /* Forecast.swift */; };
+		CA32C2D8263EE36100151719 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA32C2D7263EE36100151719 /* Day.swift */; };
 		CA5FCCEA263D312400C79071 /* WeatherlyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5FCCE9263D312400C79071 /* WeatherlyApp.swift */; };
 		CA5FCCEC263D312400C79071 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5FCCEB263D312400C79071 /* MainView.swift */; };
 		CA5FCCEE263D312700C79071 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA5FCCED263D312700C79071 /* Assets.xcassets */; };
@@ -50,6 +52,8 @@
 		4A59C27F6D7653B963CCAE84 /* Pods-Weatherly.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weatherly.debug.xcconfig"; path = "Target Support Files/Pods-Weatherly/Pods-Weatherly.debug.xcconfig"; sourceTree = "<group>"; };
 		6118B2718215B02D6A848B5B /* Pods-Weatherly-WeatherlyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weatherly-WeatherlyUITests.release.xcconfig"; path = "Target Support Files/Pods-Weatherly-WeatherlyUITests/Pods-Weatherly-WeatherlyUITests.release.xcconfig"; sourceTree = "<group>"; };
 		8FE9BE7A8CC156B8AF2D3ACC /* Pods-Weatherly.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weatherly.release.xcconfig"; path = "Target Support Files/Pods-Weatherly/Pods-Weatherly.release.xcconfig"; sourceTree = "<group>"; };
+		CA32C2D5263ED1BA00151719 /* Forecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
+		CA32C2D7263EE36100151719 /* Day.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
 		CA5FCCE6263D312400C79071 /* Weatherly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weatherly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA5FCCE9263D312400C79071 /* WeatherlyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherlyApp.swift; sourceTree = "<group>"; };
 		CA5FCCEB263D312400C79071 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -188,6 +192,8 @@
 				CA5FCD18263D343200C79071 /* Weather.swift */,
 				CA5FCD16263D33B100C79071 /* Location.swift */,
 				CA5FCD14263D31AD00C79071 /* Secrets.swift */,
+				CA32C2D5263ED1BA00151719 /* Forecast.swift */,
+				CA32C2D7263EE36100151719 /* Day.swift */,
 			);
 			path = DataModel;
 			sourceTree = "<group>";
@@ -437,11 +443,13 @@
 			files = (
 				CA5FCD20263D3AE000C79071 /* WeatherService.swift in Sources */,
 				CA5FCD22263D3C2900C79071 /* WeatherModelView.swift in Sources */,
+				CA32C2D8263EE36100151719 /* Day.swift in Sources */,
 				CA5FCCEC263D312400C79071 /* MainView.swift in Sources */,
 				CA5FCD15263D31AD00C79071 /* Secrets.swift in Sources */,
 				CA5FCD17263D33B100C79071 /* Location.swift in Sources */,
 				CA5FCD24263D483500C79071 /* ExtensionAndCustomViews.swift in Sources */,
 				CA5FCD1C263D35B600C79071 /* Temperature.swift in Sources */,
+				CA32C2D6263ED1BA00151719 /* Forecast.swift in Sources */,
 				CA5FCD1E263D375000C79071 /* Constants.swift in Sources */,
 				CA5FCCEA263D312400C79071 /* WeatherlyApp.swift in Sources */,
 				CA5FCD19263D343200C79071 /* Weather.swift in Sources */,
