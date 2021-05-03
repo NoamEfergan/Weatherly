@@ -7,6 +7,7 @@ target 'Weatherly' do
 
   # Pods for Weatherly
 
+  pod 'Nuke', '9.1.1'
 
   target 'WeatherlyTests' do
     inherit! :search_paths

@@ -8,12 +8,12 @@
 import Foundation
 
 struct Temperature: Codable {
-    let temp_c   : Double
-    let temp_f   : Double
-    let condition: Condition
-//    let isDay    : Int
+    let temp_c    : Double
+    let temp_f    : Double
+    let condition : Condition
 }
 
 struct Condition: Codable {
     let text: String
+    let icon: String
 }

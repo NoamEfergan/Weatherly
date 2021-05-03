@@ -16,7 +16,7 @@ struct WeatherService {
         let urlString = Constants.baseAPIurl + Secrets.API_KEY + "&q=\(location)&days=3&aqi=no&alerts=no"
         guard let urlStringEncoded = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
               let url = URL(string: urlStringEncoded) else {
-            completion(nil, "Whoops! something went wrong. Try again!")
+            completion(nil, Constants.errorSomethingWentWrong)
             return
         }
 
@@ -31,7 +31,7 @@ struct WeatherService {
                 guard let _data = data,
                       let goodResponse = try? JSONDecoder().decode(Weather.self, from: _data)
                 else {
-                    completion(nil, "Whoops! something went wrong. Try again!")
+                    completion(nil, Constants.errorSomethingWentWrong)
                     return
                 }
                 // No error has happened, and the data was decoded properly to a Weather object

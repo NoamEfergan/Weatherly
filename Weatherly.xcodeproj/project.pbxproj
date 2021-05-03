@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,6 +11,9 @@
 		AD0CE344DDC7D59AE1B26749 /* Pods_WeatherlyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1310B5301D175A8E3385FA7A /* Pods_WeatherlyTests.framework */; };
 		CA32C2D6263ED1BA00151719 /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA32C2D5263ED1BA00151719 /* Forecast.swift */; };
 		CA32C2D8263EE36100151719 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA32C2D7263EE36100151719 /* Day.swift */; };
+		CA32C2DA263FCFC000151719 /* FetchImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA32C2D9263FCFC000151719 /* FetchImage.swift */; };
+		CA32C2DC263FD04C00151719 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA32C2DB263FD04C00151719 /* ImageView.swift */; };
+		CA32C2DE263FE58B00151719 /* DayDisplayObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA32C2DD263FE58B00151719 /* DayDisplayObject.swift */; };
 		CA5FCCEA263D312400C79071 /* WeatherlyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5FCCE9263D312400C79071 /* WeatherlyApp.swift */; };
 		CA5FCCEC263D312400C79071 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5FCCEB263D312400C79071 /* MainView.swift */; };
 		CA5FCCEE263D312700C79071 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA5FCCED263D312700C79071 /* Assets.xcassets */; };
@@ -24,7 +27,7 @@
 		CA5FCD1E263D375000C79071 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5FCD1D263D375000C79071 /* Constants.swift */; };
 		CA5FCD20263D3AE000C79071 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5FCD1F263D3AE000C79071 /* WeatherService.swift */; };
 		CA5FCD22263D3C2900C79071 /* WeatherModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5FCD21263D3C2900C79071 /* WeatherModelView.swift */; };
-		CA5FCD24263D483500C79071 /* ExtensionAndCustomViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5FCD23263D483500C79071 /* ExtensionAndCustomViews.swift */; };
+		CA5FCD24263D483500C79071 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5FCD23263D483500C79071 /* ActivityIndicator.swift */; };
 		E8BE43CC4CC16C7143D4111F /* Pods_Weatherly_WeatherlyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7A37FE06508D40053C6EF53 /* Pods_Weatherly_WeatherlyUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +57,9 @@
 		8FE9BE7A8CC156B8AF2D3ACC /* Pods-Weatherly.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weatherly.release.xcconfig"; path = "Target Support Files/Pods-Weatherly/Pods-Weatherly.release.xcconfig"; sourceTree = "<group>"; };
 		CA32C2D5263ED1BA00151719 /* Forecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
 		CA32C2D7263EE36100151719 /* Day.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
+		CA32C2D9263FCFC000151719 /* FetchImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchImage.swift; sourceTree = "<group>"; };
+		CA32C2DB263FD04C00151719 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
+		CA32C2DD263FE58B00151719 /* DayDisplayObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayDisplayObject.swift; sourceTree = "<group>"; };
 		CA5FCCE6263D312400C79071 /* Weatherly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weatherly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA5FCCE9263D312400C79071 /* WeatherlyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherlyApp.swift; sourceTree = "<group>"; };
 		CA5FCCEB263D312400C79071 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -73,7 +79,7 @@
 		CA5FCD1D263D375000C79071 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CA5FCD1F263D3AE000C79071 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 		CA5FCD21263D3C2900C79071 /* WeatherModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModelView.swift; sourceTree = "<group>"; };
-		CA5FCD23263D483500C79071 /* ExtensionAndCustomViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionAndCustomViews.swift; sourceTree = "<group>"; };
+		CA5FCD23263D483500C79071 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		D7A37FE06508D40053C6EF53 /* Pods_Weatherly_WeatherlyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Weatherly_WeatherlyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCC74ED9F4DD487F80EEA259 /* Pods-WeatherlyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherlyTests.debug.xcconfig"; path = "Target Support Files/Pods-WeatherlyTests/Pods-WeatherlyTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F9E845D20012C670579DE1EF /* Pods-Weatherly-WeatherlyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weatherly-WeatherlyUITests.debug.xcconfig"; path = "Target Support Files/Pods-Weatherly-WeatherlyUITests/Pods-Weatherly-WeatherlyUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -210,6 +216,7 @@
 			isa = PBXGroup;
 			children = (
 				CA5FCD21263D3C2900C79071 /* WeatherModelView.swift */,
+				CA32C2DD263FE58B00151719 /* DayDisplayObject.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -225,7 +232,9 @@
 		CA5FCD29263D48B400C79071 /* Extensions and custom views */ = {
 			isa = PBXGroup;
 			children = (
-				CA5FCD23263D483500C79071 /* ExtensionAndCustomViews.swift */,
+				CA5FCD23263D483500C79071 /* ActivityIndicator.swift */,
+				CA32C2D9263FCFC000151719 /* FetchImage.swift */,
+				CA32C2DB263FD04C00151719 /* ImageView.swift */,
 			);
 			path = "Extensions and custom views";
 			sourceTree = "<group>";
@@ -251,6 +260,7 @@
 				CA5FCCE2263D312400C79071 /* Sources */,
 				CA5FCCE3263D312400C79071 /* Frameworks */,
 				CA5FCCE4263D312400C79071 /* Resources */,
+				6AA1BB39EAAE7F09DC95C8BE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -288,6 +298,7 @@
 				CA5FCCFE263D312700C79071 /* Sources */,
 				CA5FCCFF263D312700C79071 /* Frameworks */,
 				CA5FCD00263D312700C79071 /* Resources */,
+				E248734B82FDC316EE73379E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -390,6 +401,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		6AA1BB39EAAE7F09DC95C8BE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Weatherly/Pods-Weatherly-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Weatherly/Pods-Weatherly-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Weatherly/Pods-Weatherly-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		7864CE20FC6DEF7DB0C12E3B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -434,6 +462,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		E248734B82FDC316EE73379E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Weatherly-WeatherlyUITests/Pods-Weatherly-WeatherlyUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Weatherly-WeatherlyUITests/Pods-Weatherly-WeatherlyUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Weatherly-WeatherlyUITests/Pods-Weatherly-WeatherlyUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -446,13 +491,16 @@
 				CA32C2D8263EE36100151719 /* Day.swift in Sources */,
 				CA5FCCEC263D312400C79071 /* MainView.swift in Sources */,
 				CA5FCD15263D31AD00C79071 /* Secrets.swift in Sources */,
+				CA32C2DE263FE58B00151719 /* DayDisplayObject.swift in Sources */,
 				CA5FCD17263D33B100C79071 /* Location.swift in Sources */,
-				CA5FCD24263D483500C79071 /* ExtensionAndCustomViews.swift in Sources */,
+				CA5FCD24263D483500C79071 /* ActivityIndicator.swift in Sources */,
 				CA5FCD1C263D35B600C79071 /* Temperature.swift in Sources */,
 				CA32C2D6263ED1BA00151719 /* Forecast.swift in Sources */,
 				CA5FCD1E263D375000C79071 /* Constants.swift in Sources */,
 				CA5FCCEA263D312400C79071 /* WeatherlyApp.swift in Sources */,
 				CA5FCD19263D343200C79071 /* Weather.swift in Sources */,
+				CA32C2DC263FD04C00151719 /* ImageView.swift in Sources */,
+				CA32C2DA263FCFC000151719 /* FetchImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

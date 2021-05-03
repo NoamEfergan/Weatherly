@@ -4,26 +4,33 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Pods-Weatherly-WeatherlyUITests.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-			<key>orderHint</key>
-			<integer>1</integer>
-		</dict>
-		<key>Pods-Weatherly.xcscheme</key>
+		<key>Nuke.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
-		<key>Pods-WeatherlyTests.xcscheme</key>
+		<key>Pods-Weatherly-WeatherlyUITests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>2</integer>
+		</dict>
+		<key>Pods-Weatherly.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>Pods-WeatherlyTests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>3</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
