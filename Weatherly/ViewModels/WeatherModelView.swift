@@ -6,8 +6,9 @@
 //
 
 import SwiftUI
+import CoreLocation
 
-public class WeatherModelView: ObservableObject {
+public class WeatherModelView: NSObject, ObservableObject, CLLocationManagerDelegate {
 
     // MARK: - Observable Variables
 
@@ -18,31 +19,61 @@ public class WeatherModelView: ObservableObject {
     // MARK: - Presentable variables
     ///All Most have default values that will be changed when API response is back
 
-    @Published var name: String               = "London"
-    @Published var region: String             = "City of London, Greater London"
-    @Published var country: String            = "United Kingdom"
-    @Published var condition: String          = "--"
-    @Published var tempTitle: String          = Constants.cel
-    @Published var temp: String               = "--"
+    @Published var name: String               = Constants.empty
+    @Published var region: String             = Constants.empty
+    @Published var country: String            = Constants.empty
+    @Published var condition: String          = Constants.empty
+    @Published var tempTitle: String          = Constants.empty
+    @Published var temp: String               = Constants.empty
     @Published var errorText: String          = Constants.errorSomethingWentWrong
     @Published var iconURL: URL               = URL(string: "https://cdn.weatherapi.com/weather/64x64/day/113.png")!
     @Published var buttonLabel: String        = Constants.cel
-    @Published var days: [DayDisplayObject] = []
+    @Published var days: [DayDisplayObject]   = []
 
     // MARK: - Non observable variables
 
     private var forecastDays: [ForecastResponse] = []
-    private var celcius    = "--"
-    private var fahrenheit = "--"
-    private let service    = WeatherService()
+    private var celcius                          = Constants.empty
+    private var fahrenheit                       = Constants.empty
+    private let service                          = WeatherService()
 
     // MARK: - API Service methods
 
-    func getWeather() {
+    /// Getting the user's location and calling the weather API
+    func getLocation() {
+        if LocationManager.shared.didUserAllow {
+            isLoading = true
+            LocationManager.shared.getLocation { [weak self] city, error in
+                guard let this = self else { fatalError() }
+                this.isLoading = false
+                // If an error happened, let the user know and stop the operation.
+                if error != nil {
+                    // Force unwrapping because we know it isn't nil
+                    this.errorText = error!
+                    this.isAlertShowing = true
+                    return
+                }
+                guard let location = city else {
+                    this.errorText = Constants.errorSomethingWentWrong
+                    this.isAlertShowing = true
+                    return
+                }
+                this.getWeather(city: location)
+            }
+        } else {
+            LocationManager.shared.askForAuth()
+            LocationManager.shared.didAllowLocation = { [weak self] didAllow in
+                self?.didChangePermission(allowed: didAllow)
+            }
+        }
+    }
+
+    /// Hitting the weather API and setting data
+    private func getWeather(city: String) {
         self.isLoading = true
-        service.getWeatherData(location: "Paris") { [weak self] weather, error in
+        service.getWeatherData(location: city) { [weak self] weather, error in
             // Capture self to prevent memory leaks
-            guard let this = self else { return }
+            guard let this = self else { fatalError() }
             this.isLoading = false
             // Checks if an error has happened
             if error != nil {
@@ -61,6 +92,14 @@ public class WeatherModelView: ObservableObject {
         }
     }
 
+    // MARK: - Private helper methods
+
+    ///Called when the callback is being called, when the user changes their location privacy setting
+    private func didChangePermission(allowed: Bool) {
+        allowed ? getLocation() : getWeather(city: Constants.defaultCity)
+    }
+
+    ///Setting the data received by the API in the variables
     private func setData(data: Weather) {
         isAlertShowing = false
         name = data.location.name
@@ -76,14 +115,7 @@ public class WeatherModelView: ObservableObject {
         if let url = URL(string: "https:" + data.temperature.condition.icon) { iconURL = url }
     }
 
-    func updateTitles() {
-        isOnCelcius.toggle()
-        buttonLabel = isOnCelcius ? Constants.cel : Constants.far
-        temp = isOnCelcius ? celcius : fahrenheit
-        tempTitle = isOnCelcius ? Constants.temp_C : Constants.temp_F
-        setDisplayItems()
-    }
-
+    /// Create and add display items, add those to the Forecast days array
     private func setDisplayItems() {
         days.removeAll()
         for forecaseDay in self.forecastDays {
@@ -92,4 +124,14 @@ public class WeatherModelView: ObservableObject {
         }
     }
 
+    // MARK: - Public helper methods
+
+    /// Updating the string of the titles
+    func updateTitles() {
+        isOnCelcius.toggle()
+        buttonLabel = isOnCelcius ? Constants.cel : Constants.far
+        temp = isOnCelcius ? celcius : fahrenheit + Constants.degree
+        tempTitle = isOnCelcius ? Constants.temp_C : Constants.temp_F
+        setDisplayItems()
+    }
 }

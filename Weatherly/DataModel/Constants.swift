@@ -12,6 +12,17 @@ struct Constants {
     // API related constants
 
     static let baseAPIurl = "https://api.weatherapi.com/v1/forecast.json?key="
+    static let defaultCity = "Cupertino"
+
+    /// Temperature
+
+    static let min: String = "Min: "
+    static let max: String = "Max: "
+    static let avg: String = "Average: "
+
+    static let cel: String = "Celcius"
+    static let far: String = "Fahrenheit"
+    static let degree: String = "°"
 
     // MARK: -  UI Related Constants
 
@@ -20,18 +31,9 @@ struct Constants {
     static let region: String = "Region: "
     static let country: String = "Country: "
     static let temp_C: String = "Temperature in Celcius:"
-    static let temp_F : String = "Temperature in Fahrenheit:"
-
-    static let minC: String = "Min temp in Celcius: "
-    static let maxC: String = "Max temp in Celcius: "
-    static let avgC: String = "Average temp in Celcius: "
-
-    static let minF: String = "Min temp in Fahrenheit: "
-    static let maxF: String = "Max temp in Fahrenheit: "
-    static let avgF: String = "Average temp in Fahrenheit: "
-
-    static let cel: String = "Celcius"
-    static let far: String = "Fahrenheit"
+    static let temp_F: String = "Temperature in Fahrenheit:"
+    static let loading: String = "Loading..."
+    static let empty: String = "--"
 
     /// Font sizes
 

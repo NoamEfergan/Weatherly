@@ -16,11 +16,11 @@ public class DayDisplayObject: ObservableObject {
 
     // MARK: - Observable Variables
 
-    @Published var minTemp: String = "--"
-    @Published var maxTemp: String = "--"
-    @Published var avgTemp: String = "--"
-    @Published var conditionString : String = "--"
-    @Published var chanceOfRain : String = "--"
+    @Published var minTemp: String = Constants.empty
+    @Published var maxTemp: String = Constants.empty
+    @Published var avgTemp: String = Constants.empty
+    @Published var conditionString : String = Constants.empty
+    @Published var chanceOfRain : String = Constants.empty
     @Published var iconURL: URL = URL(string: "www.apple.com")!
 
     // MARK: - Init method
@@ -33,9 +33,9 @@ public class DayDisplayObject: ObservableObject {
 
     private func setData() {
         guard let data = day else { return }
-        minTemp = isOnCelcius ? "\(data.mintemp_c)" : "\(data.mintemp_f)"
-        maxTemp = isOnCelcius ? "\(data.maxtemp_c)" : "\(data.maxtemp_f)"
-        avgTemp = isOnCelcius ? "\(data.avgtemp_c)" : "\(data.avgtemp_f)"
+        minTemp = isOnCelcius ? "\(data.mintemp_c)" : "\(data.mintemp_f)" + Constants.degree
+        maxTemp = isOnCelcius ? "\(data.maxtemp_c)" : "\(data.maxtemp_f)" + Constants.degree
+        avgTemp = isOnCelcius ? "\(data.avgtemp_c)" : "\(data.avgtemp_f)" + Constants.degree
         conditionString = data.condition.text
         chanceOfRain = data.daily_chance_of_rain
         iconURL = getDailyIcon(day: data)

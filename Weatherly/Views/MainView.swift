@@ -62,34 +62,51 @@ struct MainView: View {
                                     width: Constants.mainIconFrameSize,
                                     height: Constants.mainIconFrameSize
                                 )
+                            HStack {
+                                // Temps in cel
+                                Text(viewModel.tempTitle)
+                                    .padding(.leading)
+                                    .font(.title3)
+                                Text(viewModel.temp)
+                            }
                         }
                         Spacer()
-                        HStack {
-                            // Temps in cel
-                            Text(viewModel.tempTitle)
-                                .padding(.leading)
-                                .font(.title3)
-                            Text(viewModel.temp)
-                            Spacer()
-                        }
-                        Spacer()
+                        // Bottom forecast view
                         HStack {
                             ForEach(0..<viewModel.days.count, id: \.self, content: { i in
                                 let day = viewModel.days[i]
+                                // Individual forecast view
                                 VStack {
-                                    Text(day.minTemp)
-                                }
+                                    ImageView(url: viewModel.iconURL)
+                                        .frame(
+                                            width: Constants.forecastIconFrameSize,
+                                            height: Constants.forecastIconFrameSize
+                                        )
+                                    Text(Constants.min + day.minTemp)
+                                        .lineLimit(1)
+                                        .minimumScaleFactor(0.5)
+                                    Text(Constants.max + day.maxTemp)
+                                        .lineLimit(1)
+                                        .minimumScaleFactor(0.5)
+                                    Text(Constants.avg + day.avgTemp)
+                                        .lineLimit(1)
+                                        .minimumScaleFactor(0.5)
+                                    Text(day.conditionString)
+                                        .lineLimit(1)
+                                        .minimumScaleFactor(0.5)
+                                }.padding(.horizontal)
                             }
-                            )
-                        }
+                        )
                     }
                         Spacer()
-                    }
+                }
+            }
 
                 }
-                ActivityIndicator(isAnimating: .constant(viewModel.isLoading), style: .large)
+            ActivityIndicator(isAnimating: .constant(viewModel.isLoading), style: .large)
+            Text(Constants.loading).opacity(viewModel.isLoading ? 1 : 0)
             }.onAppear() {
-                viewModel.getWeather()
+                viewModel.getLocation()
             }.alert(isPresented: .constant(viewModel.isAlertShowing), content:
                         {
                             Alert(title:Text( Constants.errorTitle), message: Text(viewModel.errorText), dismissButton: .default(Text(Constants.dismissButton)))
