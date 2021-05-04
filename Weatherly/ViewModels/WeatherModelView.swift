@@ -17,7 +17,6 @@ public class WeatherModelView: NSObject, ObservableObject, CLLocationManagerDele
     @Published var isOnCelcius    = true
 
     // MARK: - Presentable variables
-    ///All Most have default values that will be changed when API response is back
 
     @Published var name: String               = Constants.empty
     @Published var region: String             = Constants.empty
@@ -29,6 +28,9 @@ public class WeatherModelView: NSObject, ObservableObject, CLLocationManagerDele
     @Published var iconURL: URL               = URL(string: "https://cdn.weatherapi.com/weather/64x64/day/113.png")!
     @Published var buttonLabel: String        = Constants.cel
     @Published var days: [DayDisplayObject]   = []
+    @Published var searchText: String         = "" { didSet {
+        handleSearchBarResults(text: searchText)
+    }}
 
     // MARK: - Non observable variables
 
@@ -122,6 +124,18 @@ public class WeatherModelView: NSObject, ObservableObject, CLLocationManagerDele
             let day = DayDisplayObject(isOnCelcius: isOnCelcius, day: forecaseDay.day)
             days.append(day)
         }
+    }
+
+
+    /// Handles the text entered by the user
+    /// - Parameter text: String value of the search bar
+    private func handleSearchBarResults(text: String) {
+        if text.isEmpty {
+            errorText = Constants.emptySearch
+            isAlertShowing = true
+            return
+        }
+        getWeather(city: text)
     }
 
     // MARK: - Public helper methods

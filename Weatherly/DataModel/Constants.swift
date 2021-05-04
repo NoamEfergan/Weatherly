@@ -34,6 +34,7 @@ struct Constants {
     static let temp_F: String = "Temperature in Fahrenheit:"
     static let loading: String = "Loading..."
     static let empty: String = "--"
+    static let placeholder: String = "Search for any city!"
 
     /// Font sizes
 
@@ -54,4 +55,10 @@ struct Constants {
     static let errorTitle: String = "Whoops!"
     static let errorSomethingWentWrong: String = "something went wrong. Try again!"
     static let dismissButton: String = "Got it!"
+    static let emptySearch: String = "Search value cannot be empty!"
+
+    /// Gradients
+
+    static let backgroundGradient: Gradient = Gradient(colors: [Color.init(#colorLiteral(red: 0.257717669, green: 0.7781383395, blue: 0.8628693223, alpha: 1)),Color.init(#colorLiteral(red: 0.3170586526, green: 0.2887242436, blue: 0.613643527, alpha: 1))])
+    static let containerGradient: Gradient = Gradient(colors: [Color.init(#colorLiteral(red: 0.5201607347, green: 0.8455730677, blue: 0.8075823188, alpha: 1)),Color.init(#colorLiteral(red: 0.09286741167, green: 0.315694958, blue: 0.4711213708, alpha: 1))])
 }
