@@ -19,6 +19,7 @@ struct MainView: View {
         ZStack {
             LinearGradient(gradient: Constants.backgroundGradient, startPoint: .topLeading, endPoint: .bottomTrailing)
                 .edgesIgnoringSafeArea(.all)
+                .ignoresSafeArea(.keyboard, edges: .all)
             VStack {
                 SearchBar(text: $viewModel.searchText)
                 VStack {
@@ -34,6 +35,8 @@ struct MainView: View {
                                         .font(.system(size: Constants.titleFontSize))
                                         .padding(.leading)
                                         .foregroundColor(.white)
+                                        .lineLimit(1)
+                                        .minimumScaleFactor(0.5)
                                     Spacer()
                                     // Change metric button
                                     Button(viewModel.buttonLabel) {
@@ -48,9 +51,13 @@ struct MainView: View {
                                         .padding(.leading)
                                         .font(.system(size: Constants.regionTitleFontSize))
                                         .foregroundColor(.white)
+                                        .lineLimit(1)
+                                        .minimumScaleFactor(0.5)
                                     Text(viewModel.region)
                                         .font(.system(size: Constants.regionDescriptionFontSize))
                                         .foregroundColor(.white)
+                                        .lineLimit(1)
+                                        .minimumScaleFactor(0.5)
                                     Spacer()
                                 }
                                 HStack {
@@ -59,17 +66,23 @@ struct MainView: View {
                                         .padding(.leading)
                                         .font(.system(size: Constants.countryTitleFontSize))
                                         .foregroundColor(.white)
+                                        .lineLimit(1)
+                                        .minimumScaleFactor(0.5)
                                     Text(viewModel.country)
                                         .font(.system(size: Constants.countryDescriptionFontSize))
                                         .foregroundColor(.white)
+                                        .lineLimit(1)
+                                        .minimumScaleFactor(0.5)
                                     Spacer()
                                 }
                             }
                         }
                     }
                     .frame(
-                        width: UIScreen.main.bounds.width - 20,
-                        height: 160
+                        minWidth:UIScreen.main.bounds.width - 20,
+                        maxWidth: UIScreen.main.bounds.width - 20,
+                        minHeight: 0,
+                        maxHeight: 160
                     )
                     .cornerRadius(20)
                     .shadow(color: .black.opacity(0.4), radius: 5, x: 3, y: 8)
@@ -84,6 +97,8 @@ struct MainView: View {
                             Text(viewModel.condition)
                                 .font(.system(size: Constants.conditionFontSize))
                                 .foregroundColor(.white)
+                                .lineLimit(1)
+                                .minimumScaleFactor(0.5)
                             // Icon
                             ImageView(url: viewModel.iconURL)
                                 .frame(
@@ -96,15 +111,21 @@ struct MainView: View {
                                     .padding(.leading)
                                     .font(.title3)
                                     .foregroundColor(.white)
+                                    .lineLimit(1)
+                                    .minimumScaleFactor(0.5)
                                 Text(viewModel.temp)
                                     .foregroundColor(.white)
+                                    .lineLimit(1)
+                                    .minimumScaleFactor(0.5)
                             }
                             Spacer()
                         }
                     }
                     .frame(
-                        width: UIScreen.main.bounds.width - 20,
-                        height: 250
+                        minWidth:UIScreen.main.bounds.width - 20,
+                        maxWidth: UIScreen.main.bounds.width - 20,
+                        minHeight: 0,
+                        maxHeight: 250
                     )
                     .cornerRadius(20)
                     .shadow(color: .black.opacity(0.4), radius: 5, x: 3, y: 8)
@@ -146,8 +167,10 @@ struct MainView: View {
                         }
                     }
                     .frame(
-                        width: UIScreen.main.bounds.width - 20,
-                        height: 170
+                        minWidth:UIScreen.main.bounds.width - 20,
+                        maxWidth: UIScreen.main.bounds.width - 20,
+                        minHeight: 0,
+                        maxHeight: 170
                     )
                     .cornerRadius(20)
                     .shadow(color: .black.opacity(0.4), radius: 5, x: 3, y: 8)
@@ -162,12 +185,14 @@ struct MainView: View {
                     .foregroundColor(.white)
             }
         }
+        .ignoresSafeArea(.keyboard, edges: .all)
         .onAppear() {
             viewModel.getLocation()
-        }.alert(isPresented: $viewModel.isAlertShowing, content:
-                    {
-                        Alert(title:Text( Constants.errorTitle), message: Text(viewModel.errorText), dismissButton: .default(Text(Constants.dismissButton)))
-                    }
+        }
+        .alert(isPresented: $viewModel.isAlertShowing, content:
+                {
+                    Alert(title:Text( Constants.errorTitle), message: Text(viewModel.errorText), dismissButton: .default(Text(Constants.dismissButton)))
+                }
         )
     }
 }
